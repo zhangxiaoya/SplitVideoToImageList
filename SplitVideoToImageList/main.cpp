@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	VideoCapture videoSource("Test.mp4");
+	VideoCapture videoSource("testVideoTrim.mp4");
 	if(videoSource.isOpened())
 	{
 		Mat currentFrame;
@@ -20,7 +20,7 @@ int main()
 				break;
 
 			imshow(winname, currentFrame);
-			waitKey(10);
+			waitKey(100);
 		}
 
 		destroyAllWindows();
