@@ -7,8 +7,9 @@
 *.jpg
 *.png
 
-# Ignorw video file
+# Ignore video file
 *.avi
+*.mp4
 
 # Ignore class diagram file
 *.cd
