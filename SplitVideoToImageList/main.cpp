@@ -3,6 +3,7 @@
 #include "FrameWriter/FrameWriterBase.hpp"
 #include "FrameWriter/GrayFrameWriter.hpp"
 #include "VideoSplitter/VideoSplitBase.hpp"
+#include "GrayAndDownSampleFrameWriter.hpp"
 
 using namespace cv;
 using namespace std;
@@ -18,7 +19,11 @@ int main()
 	//	frameWriter.SetVideoSpliter(&videoSpliter);
 	//	auto outputFrameStatus = frameWriter.OutputFrameStream();
 
-	GrayFrameWriter frameWriter;
+//	GrayFrameWriter frameWriter;
+//	frameWriter.SetVideoSpliter(&videoSpliter);
+//	auto outputFrameStatus = frameWriter.OutputFrameStream();
+
+	GrayAndDownSampleFrameWriter frameWriter;
 	frameWriter.SetVideoSpliter(&videoSpliter);
 	auto outputFrameStatus = frameWriter.OutputFrameStream();
 

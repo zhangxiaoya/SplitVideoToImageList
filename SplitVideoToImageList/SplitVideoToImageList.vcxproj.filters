@@ -35,5 +35,8 @@
     <ClInclude Include="VideoSplitter\VideoSplitBase.hpp">
       <Filter>VideoSplitter</Filter>
     </ClInclude>
+    <ClInclude Include="GrayAndDownSampleFrameWriter.hpp">
+      <Filter>FrameWriter</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
