@@ -23,5 +23,8 @@
     <ClInclude Include="VideoSplitBase.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FrameWriterBase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
