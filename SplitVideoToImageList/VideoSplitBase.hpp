@@ -5,7 +5,7 @@
 class VideoSplitBase
 {
 public:
-	explicit VideoSplitBase(std::string video_file_name);
+	explicit VideoSplitBase(std::string video_file_name = "");
 
 	void SetVideoSource(std::string file_name);
 

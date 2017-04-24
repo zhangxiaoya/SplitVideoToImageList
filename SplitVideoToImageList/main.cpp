@@ -1,7 +1,5 @@
 #include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-
+#include "VideoSplitBase.hpp"
 #include <iostream>
 
 using namespace  cv;
@@ -9,48 +7,31 @@ using namespace std;
 
 int main()
 {
-//	VideoCapture videoSource("testVideoTrim.mp4");
-//	if(videoSource.isOpened())
-//	{
-//		Mat currentFrame;
-//		Mat lrFrame;
-//		Mat grayImage;
+	string videoFileName = "fog_v.avi";
+	VideoSplitBase videoSpliter;
+	videoSpliter.SetVideoSource(videoFileName);
+	while (true)
+	{
+		auto NextFrame = videoSpliter.getNextFrame();
+		if(NextFrame.empty() && videoSpliter.SplitStatus() == -1)
+		{
+			cout << "Open Video File Failed, Please Check File Existed or Not!" << endl;
+			break;
+		}
 
-//		auto currentFrameWinname = "Current Frame";
-//		auto lowResolutionFrameWinname = "Low Resolution Frame";
-//		namedWindow(currentFrameWinname);
-//		namedWindow(lowResolutionFrameWinname);
+		if(NextFrame.empty() && videoSpliter.SplitStatus() == -2)
+		{
+			cout << "To The End of This Video!" << endl;
+			break;
+		}
 
-//		auto idx = 0;
-//		char framename[10];
+		imshow("Next Frame", NextFrame);
+		waitKey(100);
+	}
 
-//		while (true)
-//		{
-//			videoSource >> currentFrame;
-//			if(currentFrame.empty())
-//				break;
+	destroyAllWindows();
 
-//			cvtColor(currentFrame, grayImage, CV_BGR2GRAY);
+	system("pause ");
 
-//			Mat tempMat;
-//			pyrDown(grayImage, tempMat);
-//			pyrDown(tempMat, lrFrame);
-
-//			imshow(currentFrameWinname, currentFrame);
-//			imshow(lowResolutionFrameWinname,lrFrame);
-//			waitKey(100);
-
-//			sprintf(framename, "%d.png", idx);
-//			imwrite(framename, lrFrame);
-//			idx++;
-//		}
-
-//		destroyAllWindows();
-//	}
-//	else
-//	{
-//		cout << "Cannot get this video file!" << endl;
-//		system("pause");
-//	}
 	return 0;
 }
