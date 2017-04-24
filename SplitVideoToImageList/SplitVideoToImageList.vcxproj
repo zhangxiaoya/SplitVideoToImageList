@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrameWriterBase.hpp" />
+    <ClInclude Include="GrayFrameWriter.hpp" />
     <ClInclude Include="VideoSplitBase.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

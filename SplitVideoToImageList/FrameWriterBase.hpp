@@ -4,13 +4,14 @@
 class FrameWriterbase
 {
 public:
+	virtual ~FrameWriterbase() = default;
 	explicit FrameWriterbase(std::string output_folder_name = "");
 
 	void SetVideoSpliter(VideoSplitBase* video_spliter);
 
-	int OutputFrameStream() const;
+	virtual int OutputFrameStream() const;
 
-private:
+protected:
 	std::string outputFolderName;
 	VideoSplitBase* videoSpliter;
 };
