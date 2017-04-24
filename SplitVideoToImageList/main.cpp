@@ -1,8 +1,8 @@
 #include <opencv2/core/core.hpp>
-#include "VideoSplitBase.hpp"
 #include <iostream>
-#include "FrameWriterBase.hpp"
-#include "GrayFrameWriter.hpp"
+#include "FrameWriter/FrameWriterBase.hpp"
+#include "FrameWriter/GrayFrameWriter.hpp"
+#include "VideoSplitter/VideoSplitBase.hpp"
 
 using namespace cv;
 using namespace std;

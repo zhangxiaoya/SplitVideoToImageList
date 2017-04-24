@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="FrameWriter">
+      <UniqueIdentifier>{0cf1e2f8-8749-4efb-93bb-353d9272187a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VideoSplitter">
+      <UniqueIdentifier>{86d6cd67-3665-4daf-947d-e829417c1903}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -20,14 +26,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VideoSplitBase.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FrameWriter\FrameWriterBase.hpp">
+      <Filter>FrameWriter</Filter>
     </ClInclude>
-    <ClInclude Include="FrameWriterBase.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="FrameWriter\GrayFrameWriter.hpp">
+      <Filter>FrameWriter</Filter>
     </ClInclude>
-    <ClInclude Include="GrayFrameWriter.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="VideoSplitter\VideoSplitBase.hpp">
+      <Filter>VideoSplitter</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

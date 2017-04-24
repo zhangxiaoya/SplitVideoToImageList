@@ -1,5 +1,5 @@
 #pragma once
-#include "VideoSplitBase.hpp"
+#include "../VideoSplitter/VideoSplitBase.hpp"
 
 class FrameWriterbase
 {

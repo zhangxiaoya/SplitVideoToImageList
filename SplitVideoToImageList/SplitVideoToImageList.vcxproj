@@ -114,9 +114,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FrameWriterBase.hpp" />
-    <ClInclude Include="GrayFrameWriter.hpp" />
-    <ClInclude Include="VideoSplitBase.hpp" />
+    <ClInclude Include="FrameWriter\FrameWriterBase.hpp" />
+    <ClInclude Include="FrameWriter\GrayFrameWriter.hpp" />
+    <ClInclude Include="VideoSplitter\VideoSplitBase.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
