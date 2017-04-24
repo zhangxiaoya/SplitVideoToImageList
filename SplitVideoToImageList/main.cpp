@@ -9,48 +9,48 @@ using namespace std;
 
 int main()
 {
-	VideoCapture videoSource("testVideoTrim.mp4");
-	if(videoSource.isOpened())
-	{
-		Mat currentFrame;
-		Mat lrFrame;
-		Mat grayImage;
+//	VideoCapture videoSource("testVideoTrim.mp4");
+//	if(videoSource.isOpened())
+//	{
+//		Mat currentFrame;
+//		Mat lrFrame;
+//		Mat grayImage;
 
-		auto currentFrameWinname = "Current Frame";
-		auto lowResolutionFrameWinname = "Low Resolution Frame";
-		namedWindow(currentFrameWinname);
-		namedWindow(lowResolutionFrameWinname);
+//		auto currentFrameWinname = "Current Frame";
+//		auto lowResolutionFrameWinname = "Low Resolution Frame";
+//		namedWindow(currentFrameWinname);
+//		namedWindow(lowResolutionFrameWinname);
 
-		auto idx = 0;
-		char framename[10];
+//		auto idx = 0;
+//		char framename[10];
 
-		while (true)
-		{
-			videoSource >> currentFrame;
-			if(currentFrame.empty())
-				break;
+//		while (true)
+//		{
+//			videoSource >> currentFrame;
+//			if(currentFrame.empty())
+//				break;
 
-			cvtColor(currentFrame, grayImage, CV_BGR2GRAY);
+//			cvtColor(currentFrame, grayImage, CV_BGR2GRAY);
 
-			Mat tempMat;
-			pyrDown(grayImage, tempMat);
-			pyrDown(tempMat, lrFrame);
+//			Mat tempMat;
+//			pyrDown(grayImage, tempMat);
+//			pyrDown(tempMat, lrFrame);
 
-			imshow(currentFrameWinname, currentFrame);
-			imshow(lowResolutionFrameWinname,lrFrame);
-			waitKey(100);
+//			imshow(currentFrameWinname, currentFrame);
+//			imshow(lowResolutionFrameWinname,lrFrame);
+//			waitKey(100);
 
-			sprintf(framename, "%d.png", idx);
-			imwrite(framename, lrFrame);
-			idx++;
-		}
+//			sprintf(framename, "%d.png", idx);
+//			imwrite(framename, lrFrame);
+//			idx++;
+//		}
 
-		destroyAllWindows();
-	}
-	else
-	{
-		cout << "Cannot get this video file!" << endl;
-		system("pause");
-	}
+//		destroyAllWindows();
+//	}
+//	else
+//	{
+//		cout << "Cannot get this video file!" << endl;
+//		system("pause");
+//	}
 	return 0;
 }

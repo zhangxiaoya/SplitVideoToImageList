@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <core/core.hpp>
 #include <highgui/highgui.hpp>
 
@@ -9,6 +8,8 @@ public:
 	explicit VideoSplitBase(std::string video_file_name);
 
 	void SetVideoSource(std::string file_name);
+
+	int SplitStatus() const;
 
 	cv::Mat getNextFrame();
 
@@ -28,6 +29,11 @@ inline void VideoSplitBase::SetVideoSource(std::string file_name)
 	this->videoFileName = file_name;
 }
 
+inline int VideoSplitBase::SplitStatus() const
+{
+	return this->status;
+}
+
 inline cv::Mat VideoSplitBase::getNextFrame()
 {
 	if (!videoCapture.isOpened())
@@ -41,5 +47,7 @@ inline cv::Mat VideoSplitBase::getNextFrame()
 	}
 	cv::Mat returnFrame;
 	videoCapture >> returnFrame;
+	if (returnFrame.empty())
+		status = -2;
 	return returnFrame;
 }
