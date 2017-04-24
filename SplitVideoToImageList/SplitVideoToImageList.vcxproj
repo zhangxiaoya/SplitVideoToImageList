@@ -117,6 +117,7 @@
     <ClInclude Include="FrameWriter\FrameWriterBase.hpp" />
     <ClInclude Include="FrameWriter\GrayFrameWriter.hpp" />
     <ClInclude Include="GrayAndDownSampleFrameWriter.hpp" />
+    <ClInclude Include="GrayDownSampleAndSeperateUpAndDownFrameWriter.hpp" />
     <ClInclude Include="VideoSplitter\VideoSplitBase.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

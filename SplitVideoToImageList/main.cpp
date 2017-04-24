@@ -4,14 +4,15 @@
 #include "FrameWriter/GrayFrameWriter.hpp"
 #include "VideoSplitter/VideoSplitBase.hpp"
 #include "GrayAndDownSampleFrameWriter.hpp"
+#include "GrayDownSampleAndSeperateUpAndDownFrameWriter.hpp"
 
 using namespace cv;
 using namespace std;
 
 int main()
 {
-	//	string videoFileName = "fog_v.avi";
-	string videoFileName = "tree.avi";
+	string videoFileName = "fog_v.avi";
+	//	string videoFileName = "tree.avi";
 	VideoSplitBase videoSpliter;
 	videoSpliter.SetVideoSource(videoFileName);
 
@@ -19,11 +20,15 @@ int main()
 	//	frameWriter.SetVideoSpliter(&videoSpliter);
 	//	auto outputFrameStatus = frameWriter.OutputFrameStream();
 
-//	GrayFrameWriter frameWriter;
-//	frameWriter.SetVideoSpliter(&videoSpliter);
-//	auto outputFrameStatus = frameWriter.OutputFrameStream();
+	//	GrayFrameWriter frameWriter;
+	//	frameWriter.SetVideoSpliter(&videoSpliter);
+	//	auto outputFrameStatus = frameWriter.OutputFrameStream();
 
-	GrayAndDownSampleFrameWriter frameWriter;
+	//	GrayAndDownSampleFrameWriter frameWriter;
+	//	frameWriter.SetVideoSpliter(&videoSpliter);
+	//	auto outputFrameStatus = frameWriter.OutputFrameStream();
+
+	GrayDownSampleAndSeperateUpAndDown frameWriter;
 	frameWriter.SetVideoSpliter(&videoSpliter);
 	auto outputFrameStatus = frameWriter.OutputFrameStream();
 
